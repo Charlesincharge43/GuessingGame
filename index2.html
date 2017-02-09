@@ -1,0 +1,58 @@
+<!DOCTYPE html><! Begin every html doc with this>
+<html lang="en">
+  <head>
+    <title>Guessing Game</title><! THis is what shows up on the tab >
+
+    <!-- Bootstrap and CSS here-->
+    <link rel='stylesheet' type='text/css' href='style.css'><! the href refers to the css file.  in this case it's style.css (located in the same directory as this index.html file>
+
+  </head>
+  <body><!Body is the bulk of the css file, divided into 2 main sections ..>
+
+      <div id='app' class='center'><! div tags used to divide html sections.. think of them like locks, or containers for other html elements that you want to group together.  This div (id 'app') contains all main functionality of our app>
+
+        <div id='headers' class='center'><!Put in content here>
+          <h1>Guessing Game!</h1>
+          <h2>Guess a number between 1 and 100</h2>
+        </div>
+
+        <div id='main'><!Inside this is the rest of the application.. a place to get players input, list of guesses, and reset and hint buttons.  If you look at the picture provided in the overview: PLay the guessing game! and guess a number.. are the header div.. the input div is the # circle and Go!  The guesses are the blank thingies.. and menu buttons straightforward>
+          <div id='input-parent'>
+            <!-- Player's guess input, and submit button -->
+            <input id='player-input' class='center' placeholder='#' maxlength='3' autofocus='autofocus'></input><p><button id='submit' class='center'>Go!</button>
+          </div>
+
+          <div id='guesses' class='guess'>
+            <!-- unordered list of guesses -->
+          </div>
+
+          <div id="menu-btns">
+            <!-- reset and hint buttons -->
+          </div>
+        </div>
+      </div>
+
+
+
+    <div id='footer'><! second div called  footer.. don't need to change ANYTHING here excelt for the classes!... remember the img src needs to match your images in the folder>
+        <div>
+          <div class=''>
+            <img src='fa-logo@2x.png'></img><!img tag is self explanatory>
+          </div>
+
+          <div class=''>
+            <h4>Project by YOUR NAME HERE</h4><!heading... the 4 tells you which heading you want... h1 is the largest header (large titles)... h2 for subtitles.. h4 smaller but still larger than paragraph tag>
+          </div>
+
+          <div class=''>
+            <img src='grace_hopper_academy.png'></img>
+          </div>
+
+
+        </div>
+    </div>
+
+  </body>
+</html>
+
+
