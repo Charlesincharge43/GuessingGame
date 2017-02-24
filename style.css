@@ -131,12 +131,12 @@ img {
   UPDATE AGAIN:  I have no idea why I can't get this footer to work... placing it outside the
   center container (id='app') makes it work, but placing it inside will not.  */
 
+  /*width: 940px;*/
+  width: 100%;
   border-top: solid 2px black;
   background-color: white;
   position: fixed;
   bottom: 0;
-  /*width: 940px;*/
-  width: 100%;
   background-color: white/*Fullstack guide says to do this.. doesn't seem necessary though */
 }
 
