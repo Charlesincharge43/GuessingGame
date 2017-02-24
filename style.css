@@ -1,21 +1,170 @@
-    <style>
-      .center {
-        text-align: center;
+    /*
+    To refresh your memory, css structure is the selector (before the {} brackets) and
+    the delcaration (in the {} brackets).  See 4:45 in F2.3.css really good overview of
+    selecting elements;
+
+    Selecting by tags (affect the relevant html tags - body here-  in the html document):
+
+    body{
+      color:red;
       }
-      ul {
-          list-style: none;
-          padding: 0;
+
+    Selecting by class (select all elements who have the class ".class" here)
+    .class {
+      font-size: 50px;
+    }
+
+    Selecting nodes that belong to multiple classes (? I think?)
+    .class .class2 {
       }
-      img {
-          display: inline;
-          width: 200px;
-          height: 100px;
-      }
-      #footer {
-          width: 100%;
-          border-top: solid 2px black;
-          background-color: white;
-          position: fixed;
-          bottom: 0;
-      }
-    </style>
+
+    Selecting by ID (select all elements with the ID title)
+    #title {
+      text-align: center;
+    }
+
+    Declaration is obv just what you want to do
+    Very similar to javascript objects
+
+    Common css properties
+
+    width/height
+    display
+    margin/padding
+    border
+    text-align (left, right, center, etc)
+    color (color of the text itself...)
+    position (how elements positioned)
+    font-size
+
+    */
+body {
+  background-image: url('lgrey016.jpg');/*source: http://www.grsites.com/archive/textures/view/source=archive/id=2162/ */
+}
+
+.center {
+  text-align: center;
+}
+
+.float {
+  position: relative;
+  top: -15px;
+  opacity: 0;
+}
+
+/* Hints div will be invisible until the hints event handler toggles it to slideToggle()*/
+#hintsdiv{
+  display: none;
+}
+
+#guess-list{
+  padding: 0;
+}
+
+#app{/* since I'm specifically modying the margins and padding so much for this particular div
+there's no need to attach the container class to it*/
+  background-color:rgba(256,256,256,0.5);
+  padding:25px 15px 200px 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+   The below can work too, but making the borders flexible can cause it to look ugly
+   everytime someone enters a new guess, it changes the look of the guess boxes and makes
+   the page look messy/not uniform.
+
+.guess {
+    display: inline;
+    font-size:60px;
+    border-radius: 30%;
+    border-style: ridge;
+    padding: 0 25px;
+    background-color: white
+
+}
+
+0 25px is => 0 25px 0 25px   short cut... (left side implies the right side)
+*/
+
+/*giving the elements fixed size can be problematic since the actual text can be too large..
+(e.g., a long number like 10000 can exceed the width size.. )
+but since this guessing game only limits the guesses to 2 digits, you don't have to worry about it
+display: inline-block; is what allows you to set size for the elements
+*/
+.guess {
+    display: inline-block;
+    font-size:50px;
+    border-radius: 30%;
+    border-style: ridge;
+    width: 80px;
+    height: 80px;
+}
+
+
+
+ul {
+  list-style: none;
+  }
+        /* unordered list elements... by default unordered lists have bullet points.. list-
+      style none gets rid of bullet points.. very common practice*/
+
+img {
+  display: inline;
+  width: 200px;
+  height: 100px;
+}
+
+#submit{
+  margin:0 5px;
+}
+
+#footer {
+  /* width:100%;  This has to be rid of if you are using containers for the div above it
+  To have footer aligned with main, you need to make both into containers so they both
+  have equal width.  Doing width=100% will override the width specified by container and make
+  it look weird
+
+  UPDATE: looks like giving them the same width may not necessarily align them either.. even
+  though they should be by default.
+
+  UPDATE AGAIN:  I have no idea why I can't get this footer to work... placing it outside the
+  center container (id='app') makes it work, but placing it inside will not.  */
+
+  border-top: solid 2px black;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  /*width: 940px;*/
+  width: 100%;
+  background-color: white/*Fullstack guide says to do this.. doesn't seem necessary though */
+}
+
+#input-parent{
+  position: relative;
+  height:200px;
+  right:150px;
+}
+
+#player-input{
+  position: absolute;
+  border-radius:50%;
+  width:160px;
+  height:160px;
+  padding:65px 0;
+  left:300px;
+  font-size:60px;
+}
+#submit{
+  position:absolute;
+  border-radius:50%;
+  width:60px;
+  height:60px;
+  top:130px;
+  left:390px;
+}
+
+#main{
+  width:480px;
+  margin: 0 auto 0 auto;
+}

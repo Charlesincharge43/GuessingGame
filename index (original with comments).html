@@ -1,0 +1,80 @@
+<!DOCTYPE html><! Begin every html doc with this>
+<html lang="en">
+  <head>
+    <title>Guessing Game</title><! THis is what shows up on the tab >
+
+    <!-- Bootstrap and CSS here-->
+    <link rel='stylesheet' type='text/css' href='style.css'><! the href refers to the css file.  in this case it's style.css (located in the same directory as this index.html file.
+
+
+      Important note!  Prior to moving the css code into the style.css file, it was in this html document right under the *boostrap and css here* comment above.  The css code was encapsulated by the style tag, which I mistakenly added into the css file.  The style tag ONLY BELONGS IN AN HTML DOCUMENT when you want your css code within the html file!  Do not transfer it to the css file, or it messes up the code would stop working properly!>
+      <link rel='stylesheet' type='text/css' href='css/bootstrap.css'>
+  </head>
+  <body><!Body is the bulk of the css file, divided into 2 main sections ..>
+
+      <div id='app' class='center container'><! div tags used to divide html sections.. think of them like locks, or containers for other html elements that you want to group together.  This div (id 'app') contains all main functionality of our app>
+      <! The div also references 2 classes, center and container.  Center references the .center in style.css, while container references a premade css code from boostrap>
+
+        <div id='headers'><!Put in content here>
+          <h1 id='title'>Guessing Game!</h1>
+          <h2 id='subtitle'>Guess a number between 1 and 100</h2>
+        </div>
+
+        <div id='main'><!Inside this is the rest of the application.. a place to get players input, list of guesses, and reset and hint buttons.  If you look at the picture provided in the overview: Play the guessing game! and guess a number.. are the header div.. the input div is the # circle and Go!  The guesses are the blank thingies.. and menu buttons straightforward>
+          <div id='input-parent'>
+            <!-- Player's guess input, and submit button -->
+            <input id='player-input' class='center' placeholder='#' maxlength='3' autofocus='autofocus'></input><button id='submit' class='center btn btn-success'>Go!</button><!class='center' here refers to alignment within the field.  Apparently it doesn't inherit the class of the parent div like you would expect>
+          </div>
+
+          <div id='guesses'><!I removed class='guess' here because I don't understand the purpose or function that it serves (why would you want to assign the same class to the parent Div in this case? esp since the the individual class elements are so different from the div*** unclear about this)>
+            <!-- unordered list of guesses -->
+              <ul id='guess-list'>
+              <li class='guess'><span>-</span></li>
+              <li class='guess'><span>-</span></li>
+              <li class='guess'><span>-</span></li>
+              <li class='guess'><span>-</span></li>
+              <li class='guess'><span>-</span></li>
+              </ul>           
+          </div>
+
+          <div id="menu-btns">
+            <!-- reset and hint buttons -->
+            <div id="menu-btns">
+            <button id='reset' class="btn btn-warning">Reset</button>
+            <button id='hint' class="btn btn-info">Hint</button>
+
+          </div>
+        </div>
+        <div id='hintsdiv'>
+        <hr>
+        <p>One of these numbers is the winner!</p>
+        <p id='hintnumbers'></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id='footer' class='container'><! second div called  footer.. don't need to change ANYTHING here excelt for the classes!... remember the img src needs to match your images in the folder.  Question... why do you need this div?  There's already a parent div (class row) that encompasses all the images and your name.  It appears maybe common practice to have an additional parent div..?  If you watch the F2.3.bootstrap video, the code at 6:21 seems like it's divided similary.>
+        <div class='row'>
+          <div class='col-sm-4'>
+            <img src='fa-logo@2x.png'></img><!img tag is self explanatory>
+          </div>
+
+          <div class='col-sm-4'>
+            <h4>Project by Charles Long</h4><!heading... the 4 tells you which heading you want... h1 is the largest header (large titles)... h2 for subtitles.. h4 smaller but still larger than paragraph tag>
+          </div>
+
+          <div class='col-sm-4'>
+            <img src='grace_hopper_academy.png'></img>
+        </div>
+
+
+        </div>
+
+
+  </body>
+</html>
+
+
+<script src='jquery-3.1.1.min.js'></script><!load jquery>
+<script src='GuessingGame.js'></script><!load guessing game javascript code.  Note this must be loaded AFTER jquery so that guessingame will have access to jquery!>
